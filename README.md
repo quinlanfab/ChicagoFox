@@ -1,6 +1,7 @@
 # ChicagoFox
 
 ChicagoFox is a theme for Firefox that transforms the browser by giving it a style similar to that of earlier Windows versions.
+![alt text](https://github.com/quinlanfab/ChicagoFox/blob/main/ChicagoFox.png?raw=true)
 ## Installation 
 
 To install ChicagoFox, you must first enable theming. To do this, navigate to your profile folder. In your URL bar enter "about:config" and type in "toolkit.legacyUserProfileCustomizations.stylesheets" and set it to true.
