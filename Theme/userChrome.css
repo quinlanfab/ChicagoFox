@@ -23,7 +23,6 @@
     --pb-urlbar-bg: #ffffff;
     --pb-button-colour: #0a0a0a;
 
-    /* Defines the 3D effect in private browsing */
     --pb-95convex: inset -1px -1px var(--pb-3d-darkest), inset 1px 1px var(--pb-3d-lightest), inset -2px -2px var(--pb-3d-dark), inset 2px 2px var(--pb-3d-light);
     --pb-95concave: inset -1px -1px var(--pb-3d-lightest), inset 1px 1px var(--pb-3d-dark), inset -2px -2px var(--pb-3d-light), inset 2px 2px var(--pb-3d-darkest);
 }
@@ -82,7 +81,7 @@
     outline: none !important;
     border: none !important;
     border-radius: 0px !important;
-    box-shadow: var(--95concave) !important; /* Concave effect */
+    box-shadow: var(--95concave) !important;
 }
 
 #urlbar[focused="true"]:not([suppress-focus-border]) > #urlbar-background,
@@ -108,25 +107,15 @@ toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack {
 
 .toolbarbutton-1:hover {
     border-radius: 0px !important;
-    box-shadow: var(--95concave) !important; /* Concave on hover */
+    box-shadow: var(--95concave) !important;
     background-color: var(--95grey) !important;
     color: var(--button-colour) !important;
 }
 
-/* Apply tab button styling to all toolbar buttons, but not the New Tab button */
-.toolbarbutton-1:not(#TabsToolbar .tabs-newtab-button) {
-    border-radius: 0px !important;
-    background-color: var(--95grey) !important;
-    box-shadow: var(--95convex) !important; /* Convex for inactive buttons */
-    color: var(--button-colour) !important;
-}
-
-/* Hover effect for toolbar buttons */
 .toolbarbutton-1:hover {
-    box-shadow: var(--95concave) !important; /* Concave on hover */
+    box-shadow: var(--95concave) !important;
 }
 
-/* Additional panel styling */
 .PanelUI-subView {
     background-color: var(--95grey) !important;
     box-shadow: var(--95convex) !important;
@@ -138,54 +127,50 @@ toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack {
     border-radius: 0 !important;
 }
 
-/* Ensuring all toolbar buttons have no radius */
 .toolbarbutton-1 {
     border-radius: 0px !important;
 }
 
-/* Remove hover effects on URL bar */
 #urlbar-background:hover {
     background-color: var(--urlbar-bg) !important;
     box-shadow: var(--95concave) !important;
 }
 
-/* Remove borders and radius from panels */
 .PanelUI-subView, .cui-widget-panel, .panel-no-padding {
     --panel-border-radius: 0px !important;
     border-radius: 0 !important;
 }
 
-/* Ensuring no rounded corners in any form */
 input, select, textarea, button, .toolbarbutton-1, .tabs-newtab-button {
     border-radius: 0 !important;
 }
 
 .tabbrowser-tab {
-    min-height: 43px !important; /* Adjust the height to your preference */
+    min-height: 43px !important;
     max-height: 43px !important;
 }
 
 #TabsToolbar {
-    min-height: 40px !important; /* Ensure the tab bar height matches */
+    min-height: 40px !important;
     max-height: 40px !important;
 }
 
 #alltabs-button { display: none !important; }
 
 #toolbar-menubar {
-    min-height: 25px !important; /* Adjust to your preferred height */
+    min-height: 25px !important;
     max-height: 25px !important;
-    padding: 0 !important; /* Remove extra padding */
-    background-color: var(--95grey) !important; /* Keep the consistent theme */
-    box-shadow: var(--95convex) !important; /* Add a 3D effect if desired */
+    padding: 0 !important;
+    background-color: var(--95grey) !important;
+    box-shadow: var(--95convex) !important;
 }
 
 #toolbar-menubar > .toolbarbutton-1 {
-    min-height: 25px !important; /* Match the height of the menu bar */
+    min-height: 25px !important;
     max-height: 25px !important;
-    padding: 0 5px !important; /* Adjust padding for buttons */
-    box-shadow: var(--95convex) !important; /* 3D effect for buttons */
-    border-radius: 0 !important; /* Ensure no rounded corners */
+    padding: 0 5px !important;
+    box-shadow: var(--95convex) !important;
+    border-radius: 0 !important;
 }
 
 #nav-bar .toolbarbutton-1 {
@@ -208,11 +193,11 @@ menupopup {
 
 menuitem {
     padding: 5px 10px !important;
-    background-color: var(--95grey) !important; /* Consistent with the menu popup */
-    box-shadow: var(--95convex) !important; /* Popped-out appearance */
+    background-color: var(--95grey) !important;
+    box-shadow: var(--95convex) !important;
 }
 
 menuitem:hover {
-    box-shadow: var(--95concave) !important; /* Popped-in appearance */
-    cursor: pointer; /* Show a pointer cursor on hover */
+    box-shadow: var(--95concave) !important;
+    cursor: pointer;
 }
