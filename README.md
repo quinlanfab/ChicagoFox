@@ -1,6 +1,6 @@
 # ChicagoFox
 
-ChicagoFox is a theme for Firefox that transforms the browser by giving it a style similar to that of earlier Windows versions.
+ChicagoFox is a theme for Firefox that transforms the browser by giving it a style similar to that of earlier Windows versions. It also works well with Chicago95: https://github.com/grassmunk/Chicago95
 
 ![alt text](https://github.com/quinlanfab/ChicagoFox/blob/main/ChicagoFox.png?raw=true)
 ## Installation 
