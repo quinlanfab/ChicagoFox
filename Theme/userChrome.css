@@ -1,0 +1,218 @@
+:root {
+    /* NORMAL BROWSING COLORS */
+    --95grey: #c0c0c0;
+    --home-bground: #008080;
+    --3d-darkest: #0a0a0a;
+    --3d-dark: #808080;
+    --3d-light: #dfdfdf;
+    --3d-lightest: #ffffff;
+    --urlbar-bg: #ffffff;
+    --button-colour: #0a0a0a;
+    
+    /* Defines the 3D effect in normal browsing */
+    --95convex: inset -1px -1px var(--3d-darkest), inset 1px 1px var(--3d-lightest), inset -2px -2px var(--3d-dark), inset 2px 2px var(--3d-light);
+    --95concave: inset -1px -1px var(--3d-lightest), inset 1px 1px var(--3d-dark), inset -2px -2px var(--3d-light), inset 2px 2px var(--3d-darkest);
+
+    /* PRIVATE BROWSING COLORS */
+    --pb95grey: #c0c0c0;
+    --pb-home-bground: #008080;
+    --pb-3d-darkest: #0a0a0a;
+    --pb-3d-dark: #808080;
+    --pb-3d-light: #dfdfdf;
+    --pb-3d-lightest: #ffffff;
+    --pb-urlbar-bg: #ffffff;
+    --pb-button-colour: #0a0a0a;
+
+    /* Defines the 3D effect in private browsing */
+    --pb-95convex: inset -1px -1px var(--pb-3d-darkest), inset 1px 1px var(--pb-3d-lightest), inset -2px -2px var(--pb-3d-dark), inset 2px 2px var(--pb-3d-light);
+    --pb-95concave: inset -1px -1px var(--pb-3d-lightest), inset 1px 1px var(--pb-3d-dark), inset -2px -2px var(--pb-3d-light), inset 2px 2px var(--pb-3d-darkest);
+}
+
+*,
+*:before,
+*:after {
+    border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+}
+
+.tabbrowser-tab[label^="New Tab"] .tab-icon-image {
+    display: none !important;
+}
+
+#nav-bar:not([tabs-hidden="true"]) {
+    box-shadow: 0px -1px 0px 0px grey !important;
+}
+
+.browser-toolbar {
+    background-color: var(--95grey) !important;
+}
+
+.tab-background[selected] {
+    box-shadow: var(--95concave) !important; /* Concave for selected tab */
+    background-color: var(--95grey) !important;
+    background-image: none !important;
+    border-radius: 0 !important;
+}
+
+.tab-background:not([selected]) {
+    box-shadow: var(--95convex) !important; /* Convex for non-selected tabs */
+    background-color: var(--95grey) !important;
+    border-radius: 0 !important;
+}
+
+.tab-background {
+    border-radius: 0px !important;
+}
+
+.tab-content {
+    color: var(--button-colour) !important;
+}
+
+#TabsToolbar .tabs-newtab-button:hover {
+    border-radius: 0 !important;
+}
+
+.tabs-newtab-button:hover .toolbarbutton-icon {
+    border-radius: 0 !important;
+}
+
+#urlbar-background {
+    background-color: var(--urlbar-bg) !important;
+    outline: none !important;
+    border: none !important;
+    border-radius: 0px !important;
+    box-shadow: var(--95concave) !important; /* Concave effect */
+}
+
+#urlbar[focused="true"]:not([suppress-focus-border]) > #urlbar-background,
+#searchbar:focus-within {
+    border: 1px solid #000080 !important;
+}
+
+.toolbarbutton-1 {
+    border-radius: 0px !important;
+    color: #0a0a0a !important;
+    fill: var(--button-colour) !important;
+}
+
+.toolbarbutton-icon {
+    border-radius: 0px !important;
+}
+
+.toolbarbutton-1 > .toolbarbutton-icon,
+toolbar .toolbarbutton-1 > .toolbarbutton-text,
+toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack {
+    border-radius: 0px !important;
+}
+
+.toolbarbutton-1:hover {
+    border-radius: 0px !important;
+    box-shadow: var(--95concave) !important; /* Concave on hover */
+    background-color: var(--95grey) !important;
+    color: var(--button-colour) !important;
+}
+
+/* Apply tab button styling to all toolbar buttons, but not the New Tab button */
+.toolbarbutton-1:not(#TabsToolbar .tabs-newtab-button) {
+    border-radius: 0px !important;
+    background-color: var(--95grey) !important;
+    box-shadow: var(--95convex) !important; /* Convex for inactive buttons */
+    color: var(--button-colour) !important;
+}
+
+/* Hover effect for toolbar buttons */
+.toolbarbutton-1:hover {
+    box-shadow: var(--95concave) !important; /* Concave on hover */
+}
+
+/* Additional panel styling */
+.PanelUI-subView {
+    background-color: var(--95grey) !important;
+    box-shadow: var(--95convex) !important;
+}
+
+.cui-widget-panel,
+.panel-no-padding {
+    --panel-border-radius: 0px !important;
+    border-radius: 0 !important;
+}
+
+/* Ensuring all toolbar buttons have no radius */
+.toolbarbutton-1 {
+    border-radius: 0px !important;
+}
+
+/* Remove hover effects on URL bar */
+#urlbar-background:hover {
+    background-color: var(--urlbar-bg) !important;
+    box-shadow: var(--95concave) !important;
+}
+
+/* Remove borders and radius from panels */
+.PanelUI-subView, .cui-widget-panel, .panel-no-padding {
+    --panel-border-radius: 0px !important;
+    border-radius: 0 !important;
+}
+
+/* Ensuring no rounded corners in any form */
+input, select, textarea, button, .toolbarbutton-1, .tabs-newtab-button {
+    border-radius: 0 !important;
+}
+
+.tabbrowser-tab {
+    min-height: 43px !important; /* Adjust the height to your preference */
+    max-height: 43px !important;
+}
+
+#TabsToolbar {
+    min-height: 40px !important; /* Ensure the tab bar height matches */
+    max-height: 40px !important;
+}
+
+#alltabs-button { display: none !important; }
+
+#toolbar-menubar {
+    min-height: 25px !important; /* Adjust to your preferred height */
+    max-height: 25px !important;
+    padding: 0 !important; /* Remove extra padding */
+    background-color: var(--95grey) !important; /* Keep the consistent theme */
+    box-shadow: var(--95convex) !important; /* Add a 3D effect if desired */
+}
+
+#toolbar-menubar > .toolbarbutton-1 {
+    min-height: 25px !important; /* Match the height of the menu bar */
+    max-height: 25px !important;
+    padding: 0 5px !important; /* Adjust padding for buttons */
+    box-shadow: var(--95convex) !important; /* 3D effect for buttons */
+    border-radius: 0 !important; /* Ensure no rounded corners */
+}
+
+#nav-bar .toolbarbutton-1 {
+  min-height: 20px !important;
+  margin-bottom: 1px !important;
+  padding-left: 2px !important;
+  border: 1px solid transparent !important;
+  margin-right: 2px !important;
+  padding: 1px !important; }
+
+#tabs-newtab-button {
+     display:none !important;
+}
+
+menupopup {
+    background-color: var(--95grey) !important;
+    box-shadow: var(--95convex) !important;
+    border: 1px solid var(--3d-dark) !important;
+}
+
+menuitem {
+    padding: 5px 10px !important;
+    background-color: var(--95grey) !important; /* Consistent with the menu popup */
+    box-shadow: var(--95convex) !important; /* Popped-out appearance */
+}
+
+menuitem:hover {
+    box-shadow: var(--95concave) !important; /* Popped-in appearance */
+    cursor: pointer; /* Show a pointer cursor on hover */
+}

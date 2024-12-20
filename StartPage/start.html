@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Page</title>
+    <style>
+        :root {
+            --95grey: #c9c9c9;
+            --home-bground: #008080;
+            --3d-darkest: #0a0a0a;
+            --3d-dark: #808080;
+            --3d-light: #dfdfdf;
+            --3d-lightest: #ffffff;
+            --urlbar-bg: #ffffff;
+            --button-colour: #0a0a0a;
+            --95convex: inset -1px -1px var(--3d-darkest), inset 1px 1px var(--3d-lightest), inset -2px -2px var(--3d-dark), inset 2px 2px var(--3d-light);
+            --95concave: inset -1px -1px var(--3d-lightest), inset 1px 1px var(--3d-dark), inset -2px -2px var(--3d-light), inset 2px 2px var(--3d-darkest);
+        }
+
+        body {
+            background-color: var(--home-bground);
+            font-family: "Helvetica", "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: black;
+            position: relative;
+            padding-bottom: 50px; /* Add space for the footer */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+            width: 150px;
+            height: auto;
+        }
+
+        .search-bar {
+            margin-right: 10px;
+            background-color: var(--urlbar-bg);
+            border: 2px solid #000080;
+            border-radius: 0;
+            padding: 5px;
+            width: 300px;
+            font-size: 14px;
+            color: black;
+            box-shadow: var(--95concave);
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border: 2px solid #000080;
+            box-shadow: var(--95concave);
+        }
+
+        .search-button {
+            background-color: #000080;
+            border: 2px solid #000080;
+            color: white;
+            padding: 6px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: var(--95convex);
+            text-align: center;
+        }
+
+        .search-button:hover {
+            background-color: #003366;
+        }
+
+        .search-button:focus {
+            outline: none;
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid layout */
+            gap: 10px; /* Space between buttons */
+            justify-items: center;
+            margin-top: 20px;
+            width: 100%; /* Ensures it spans the available width */
+            padding: 10px; /* Adds some breathing room */
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px; /* Adjust for smaller screens */
+            background-color: var(--95grey);
+            border: 2px solid #000080;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            width: 100%; /* Takes full available width */
+            max-width: 200px; /* Ensures buttons don't get too large */
+            box-sizing: border-box;
+            box-shadow: var(--95convex);
+            text-shadow: 1px 1px 2px #ffffff;
+        }
+
+        .button img {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+        .button:hover, .button:active {
+            background-color: var(--95grey);
+            box-shadow: var(--95convex);
+        }
+
+        .button:focus {
+            outline: none;
+        }
+
+        .top-right-gif {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 100px;
+            height: auto;
+        }
+
+        /* Footer styles */
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: var(--home-bground);
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            color: white;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="startlogo.png" alt="Start Logo" class="logo" />
+        <form action="https://search.inetol.net/" method="get">
+            <input type="text" name="q" class="search-bar" placeholder="Search..." />
+            <button type="submit" class="search-button">Search</button>
+        </form>
+        <div class="button-container" id="buttonContainer"></div>
+    </div>
+
+    <footer>
+        <a href="https://rationalstudios.org">
+            <p>2024 Rational Studios | No rights reserved :P</p>
+        </a>
+    </footer>
+
+    <script>
+        const websites = [
+            { name: 'YouTube', url: 'https://youtube.com' },
+            { name: 'Discord', url: 'https://discord.com/channels/@me' },
+            { name: 'X', url: 'https://x.com' },
+            { name: '4chan', url: 'https://4chan.org' },
+            { name: 'Stormfront', url: 'https://www.stormfront.org/forum/' },
+            { name: 'GTV', url: 'https://goyimtv.com/' },
+            { name: 'Stew Peters', url: 'https://stewpeters.com' },
+            { name: 'Tucker Carlson', url: 'https://tuckercarlson.com' }
+        ];
+
+        const buttonContainer = document.getElementById('buttonContainer');
+
+        function createButton(site) {
+            const button = document.createElement('a');
+            button.href = site.url;
+            button.className = 'button';
+
+            const img = document.createElement('img');
+            img.src = `https://www.google.com/s2/favicons?domain=${new URL(site.url).hostname}`;
+            img.alt = `${site.name} favicon`;
+
+            button.appendChild(img);
+            button.appendChild(document.createTextNode(site.name));
+
+            return button;
+        }
+
+        websites.forEach(site => {
+            const button = createButton(site);
+            buttonContainer.appendChild(button);
+        });
+    </script>
+</body>
+</html>
