@@ -112,6 +112,14 @@ toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack {
     color: var(--button-colour) !important;
 }
 
+.toolbarbutton-1:not(#TabsToolbar .tabs-newtab-button) {
+    border-radius: 0px !important;
+    box-shadow: var(--95concave) !important;
+    background-color: var(--95grey) !important;
+    box-shadow: var(--95convex) !important;
+    color: var(--button-colour) !important;
+}
+
 .toolbarbutton-1:hover {
     box-shadow: var(--95concave) !important;
 }
